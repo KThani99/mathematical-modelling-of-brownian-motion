@@ -32,12 +32,14 @@ def getBrownianMotion(noOfSamplePoints, noOfBrownianMotions, timeStep):
 
     return samplePointsAcrossTime, brownianMotion
 
+
 def plotBrownianMotion(samplePointsAcrossTime, brownianMotion):
     """
     """ # TODO: Write Documentation
 
     plt.plot(samplePointsAcrossTime, brownianMotion)
 
+    plt.title("Brownian Motion across Time and Space")
     plt.xlabel("Time")
     plt.ylabel("Displacement")
 
@@ -48,6 +50,7 @@ def plotBrownianMotion(samplePointsAcrossTime, brownianMotion):
 def main():
     """[Include Definition]""" # TODO: Write Documentation
 
+    # Parameters
     noOfSamplePoints = 10000
     noOfBrownianMotions = 1
     timeStep = 1.
