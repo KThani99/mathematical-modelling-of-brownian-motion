@@ -1,1 +1,1 @@
-# mathematical-modelling-of-brownian-motion
+# Mathematical Modelling of Brownian Motion
