@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from utils.main import getUniqueFileName
 
 def getBrownianMotion(noOfSamplePoints, noOfBrownianMotions, timeStep):
     """
@@ -35,7 +36,19 @@ def getBrownianMotion(noOfSamplePoints, noOfBrownianMotions, timeStep):
 
 def plotBrownianMotion(samplePointsAcrossTime, brownianMotion):
     """
-    """ # TODO: Write Documentation
+    Plots the Brownian motion(s) over time and space.
+
+    Parameters:
+        samplePointsAcrossTime (array):
+            A 1D array representing the time points at which the Brownian motion was sampled.
+            
+        brownianMotion (array):
+            A 2D array where each row corresponds to a different time point and each column corresponds to 
+            an independent Brownian motion path.
+
+    Outputs:
+        Plots the Brownian Motion across Time and Space and saves the image to disk.
+    """
 
     plt.plot(samplePointsAcrossTime, brownianMotion)
 
@@ -43,12 +56,20 @@ def plotBrownianMotion(samplePointsAcrossTime, brownianMotion):
     plt.xlabel("Time")
     plt.ylabel("Displacement")
 
-    plt.savefig("./output-images/brownian-motion-time-and-space.png") # TODO: Create Unique Names for Each run
+    uniqueFileName = getUniqueFileName("brownian-motion-time-and-space")
+    plt.savefig(f"./output-images/{uniqueFileName}")
     plt.show()
 
 
 def main():
-    """[Include Definition]""" # TODO: Write Documentation
+    """
+    Main function that generates and plots Brownian motion across Time and Space.
+
+    It defines:
+        - The number of sample points (`noOfSamplePoints`) to represent time intervals.
+        - The number of independent Brownian motion paths (`noOfBrownianMotions`) to simulate.
+        - The time step (`timeStep`) representing the time interval for the simulation.
+    """
 
     # Parameters
     noOfSamplePoints = 10000
