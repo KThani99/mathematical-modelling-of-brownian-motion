@@ -52,14 +52,32 @@ In physics, this randomness is not just noise—it's a fundamental part of how p
 
 2. Download this repository or clone it to your local machine.
 
-3. To generate the simulation of the particle in 2D, execute the `2d-simulation.py` with your preferred editor or by running the following command.
+3. To generate the simulation of the particle in 2D, execute the `simulate_2d_motion.py` with your preferred editor or by running the following command.
 
 ```bash
-python 2d-simulation.py
+python simulate_2d_motion.py
 ```
 
-4. To generate the brownian motion(s) across time and space, execute the `time-and-space.py` with your preferred editor or by running the following command.
+4. To generate the brownian motion(s) across time and space, execute the `simulate_time_and_space_motion.py` with your preferred editor or by running the following command.
 
 ```bash
-python time-and-space.py
+python simulate_time_and_space_motion.py
+```
+
+5. Before running any tests, kindly run the following command to install `pytest`.
+
+```bash
+pip install pytest
+```
+
+6. To test the util functions, run the following command.
+
+```bash
+pytest test_utils.py
+```
+
+7. To test the `simulate_2d_motion.py`, run the following command.
+
+```bash
+pytest test_simulate_2d_motion.py
 ```

@@ -23,6 +23,13 @@ def getBrownianMotion(noOfTimeSteps, stepSize, sigma):
             - yAxisPositions (array): A 1D array representing the y coordinates of the particle.
     """
 
+    if noOfTimeSteps <= 0:
+        raise ValueError("noOfTimeSteps must be positive")
+    if stepSize <= 0:
+        raise ValueError("stepSize must be positive")
+    if sigma <= 0:
+        raise ValueError("sigma must be positive")
+
     startPosition = [0, 0]
 
     xAxisPositions = np.zeros(noOfTimeSteps)
@@ -56,8 +63,8 @@ def plotBrownianMotion(xAxisPositions, yAxisPositions):
 
     plt.figure(figsize=(8, 6))
     plt.plot(xAxisPositions, yAxisPositions, color="blue", lw=1.5)
-    plt.scatter(xAxisPositions[0], yAxisPositions[0], color="red", label="Start", zorder=5)
-    plt.scatter(xAxisPositions[-1], yAxisPositions[-1], color="green", label="Stop", zorder=5)
+    plt.scatter(xAxisPositions[0], yAxisPositions[0], color="green", label="Start", zorder=5)
+    plt.scatter(xAxisPositions[-1], yAxisPositions[-1], color="red", label="Stop", zorder=5)
 
     plt.title("2D Simulation of Brownian Motion")
     plt.xlabel("X Position")
