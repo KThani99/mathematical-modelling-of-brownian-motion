@@ -23,6 +23,13 @@ def getBrownianMotion(noOfSamplePoints, noOfBrownianMotions, timeStep):
             - np.ndarray: A 2D array representing the generated Brownian motion paths..
     """
 
+    if noOfSamplePoints <= 0:
+        raise ValueError("noOfSamplePoints must be positive")
+    if noOfBrownianMotions <= 0:
+        raise ValueError("noOfBrownianMotions must be positive")
+    if timeStep <= 0:
+        raise ValueError("timeStep must be positive")
+
     samplePointsAcrossTime = np.linspace(0., timeStep, noOfSamplePoints)
     stepDifference = samplePointsAcrossTime[1] - samplePointsAcrossTime[0]
 
