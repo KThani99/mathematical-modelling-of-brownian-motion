@@ -79,8 +79,8 @@ def main():
     """
 
     # Parameters
-    noOfSamplePoints = 10000
-    noOfBrownianMotions = 1
+    noOfSamplePoints = 1000
+    noOfBrownianMotions = 100
     timeStep = 1.
 
     samplePointsAcrossTime, brownianMotion = getBrownianMotion(noOfSamplePoints, noOfBrownianMotions, timeStep)

@@ -74,6 +74,24 @@ In physics, this randomness is not just noise—it's a fundamental part of how p
 
 ![2D Brownian Motion of a Single Particle with 1000 Time Steps](./output-images/2D-brownian-motion-1729875783.png)
 
+### Bownian Motion across Time and Space (1000 sample points)
+
+#### 1 Particle
+
+![Bownian Motion across Time and Space for 1 Particle](./output-images/brownian-motion-time-and-space-1729876062.png)
+
+#### 5 Particles
+
+![Bownian Motion across Time and Space for 5 Particles](./output-images/brownian-motion-time-and-space-1729876094.png)
+
+#### 10 Particles
+
+![Bownian Motion across Time and Space for 10 Particles](./output-images/brownian-motion-time-and-space-1729876112.png)
+
+#### 100 Particles
+
+![Bownian Motion across Time and Space for 100 Particles](./output-images/brownian-motion-time-and-space-1729876136.png)
+
 ---
 
 ## Instructions to run the program
