@@ -46,6 +46,36 @@ In physics, this randomness is not just noise—it's a fundamental part of how p
 
 ---
 
+## Project Structure
+
+1. The project has code to simulate 2D Brownian Motion of a particle and to simulate multiple Brownian Motions across Time and Space.
+2. The core logic of simulating 2D Browninan Motion is coded in the [simulate_2d_motion.py](https://github.com/KThani99/mathematical-modelling-of-brownian-motion/blob/main/simulate_2d_motion.py) file.
+3. The core logic of simulating Brownian Motions across Time and Space is coded in the [simulate_time_and_space_motion.py](https://github.com/KThani99/mathematical-modelling-of-brownian-motion/blob/main/simulate_time_and_space_motion.py) file.
+4. Both of the functions, saves their output to the `output-images` folder.
+5. The test cases for simulating 2D Motion is present in the [test_simulate_2d_motion.py](https://github.com/KThani99/mathematical-modelling-of-brownian-motion/blob/main/test_simulate_2d_motion.py) file.
+6. The test cases for simulating Brownian Motions across Space and Time is present in the [test_simulate_time_and_space_motion.py](https://github.com/KThani99/mathematical-modelling-of-brownian-motion/blob/main/test_simulate_time_and_space_motion.py) file.
+7. Additionally, test cases for util functions is also written in the [test_utils.py](https://github.com/KThani99/mathematical-modelling-of-brownian-motion/blob/main/test_utils.py) file.
+
+---
+
+## Sample Results
+
+### 2D Brownian Motion of a Single Particle
+
+#### 10 Time Steps
+
+![2D Brownian Motion of a Single Particle with 10 Time Steps](./output-images/2D-brownian-motion-1729875750.png)
+
+#### 100 Time Steps
+
+![2D Brownian Motion of a Single Particle with 100 Time Steps](./output-images/2D-brownian-motion-1729875763.png)
+
+#### 1000 Time Steps
+
+![2D Brownian Motion of a Single Particle with 1000 Time Steps](./output-images/2D-brownian-motion-1729875783.png)
+
+---
+
 ## Instructions to run the program
 
 1. Install Python on your system. You can download and follow the [instructions given here](https://www.python.org/downloads/).
@@ -81,3 +111,11 @@ pytest test_utils.py
 ```bash
 pytest test_simulate_2d_motion.py
 ```
+
+8. To test the `simulate_time_and_space_motion.py`, run the following command.
+
+```bash
+pytest test_simulate_time_and_space_motion.py`
+```
+
+----
