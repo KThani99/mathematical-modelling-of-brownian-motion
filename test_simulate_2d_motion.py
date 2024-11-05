@@ -48,9 +48,7 @@ class Test2DSimulation:
         Test if plotting functions are called
         """
 
-        xAxisPositions = np.array([0, 1, 2])
-        yAxisPositions = np.array([0, 1, 2])
-        
+        xAxisPositions, yAxisPositions = getBrownianMotion(10, 1, 1)
         plotBrownianMotion(xAxisPositions, yAxisPositions)
         
         plt.figure.assert_called_once()
