@@ -133,7 +133,7 @@ pytest test_simulate_2d_motion.py
 8. To test the `simulate_time_and_space_motion.py`, run the following command.
 
 ```bash
-pytest test_simulate_time_and_space_motion.py`
+pytest test_simulate_time_and_space_motion.py
 ```
 
 ----
