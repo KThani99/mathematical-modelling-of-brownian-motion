@@ -23,8 +23,8 @@ def getBrownianMotion(noOfSamplePoints, noOfBrownianMotions, timeStep):
             - np.ndarray: A 2D array representing the generated Brownian motion paths..
     """
 
-    if noOfSamplePoints <= 0:
-        raise ValueError("noOfSamplePoints must be positive")
+    if noOfSamplePoints < 2:
+        raise ValueError("noOfSamplePoints must be positive and should be greater than or equal to 2")
     if noOfBrownianMotions <= 0:
         raise ValueError("noOfBrownianMotions must be positive")
     if timeStep <= 0:
