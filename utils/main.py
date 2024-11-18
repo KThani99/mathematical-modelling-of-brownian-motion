@@ -1,7 +1,7 @@
-import time
+import uuid
 
-def getCurrentTimeInEpochSeconds():
-    return int(time.time())
+def getUniqueId():
+    return uuid.uuid4()
 
 def getUniqueFileName(fileName: str):
-    return f"{fileName}-{getCurrentTimeInEpochSeconds()}.png"
+    return f"{fileName}-{getUniqueId()}.png"
