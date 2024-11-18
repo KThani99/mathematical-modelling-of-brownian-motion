@@ -1,5 +1,49 @@
 # Mathematical Modelling of Brownian Motion
 
+## Instructions to run the program
+
+1. Install Python on your system. You can download and follow the [instructions given here](https://www.python.org/downloads/).
+
+2. Download this repository or clone it to your local machine.
+
+3. To generate the simulation of the particle in 2D, execute the `simulate_2d_motion.py` with your preferred editor or by running the following command.
+
+```bash
+python simulate_2d_motion.py
+```
+
+4. To generate the brownian motion(s) across time and space, execute the `simulate_time_and_space_motion.py` with your preferred editor or by running the following command.
+
+```bash
+python simulate_time_and_space_motion.py
+```
+
+5. Before running any tests, kindly run the following command to install `pytest`.
+
+```bash
+pip install pytest
+```
+
+6. To test the util functions, run the following command.
+
+```bash
+pytest test_utils.py
+```
+
+7. To test the `simulate_2d_motion.py`, run the following command.
+
+```bash
+pytest test_simulate_2d_motion.py
+```
+
+8. To test the `simulate_time_and_space_motion.py`, run the following command.
+
+```bash
+pytest test_simulate_time_and_space_motion.py
+```
+
+----
+
 ## Brownian Motion
 The phenomena of Brownian motion is the seemingly random movement of particles suspended in a fluid, caused by their continuous collisions with the molecules of the surrounding medium. This phenomenon is named after the botanist Robert Brown, who observed it in 1827 while studying pollen grains in water. From a physical and mathematical viewpoint, Brownian motion is not just a biological curiosity but a fundamental process that explains how particles move in various environments. It forms the basis for many real-world phenomena, from the diffusion of gases to the behavior of microscopic objects in fluids.
 
@@ -93,47 +137,3 @@ In physics, this randomness is not just noise—it's a fundamental part of how p
 ![Bownian Motion across Time and Space for 100 Particles](./output-images/brownian-motion-time-and-space-1729876136.png)
 
 ---
-
-## Instructions to run the program
-
-1. Install Python on your system. You can download and follow the [instructions given here](https://www.python.org/downloads/).
-
-2. Download this repository or clone it to your local machine.
-
-3. To generate the simulation of the particle in 2D, execute the `simulate_2d_motion.py` with your preferred editor or by running the following command.
-
-```bash
-python simulate_2d_motion.py
-```
-
-4. To generate the brownian motion(s) across time and space, execute the `simulate_time_and_space_motion.py` with your preferred editor or by running the following command.
-
-```bash
-python simulate_time_and_space_motion.py
-```
-
-5. Before running any tests, kindly run the following command to install `pytest`.
-
-```bash
-pip install pytest
-```
-
-6. To test the util functions, run the following command.
-
-```bash
-pytest test_utils.py
-```
-
-7. To test the `simulate_2d_motion.py`, run the following command.
-
-```bash
-pytest test_simulate_2d_motion.py
-```
-
-8. To test the `simulate_time_and_space_motion.py`, run the following command.
-
-```bash
-pytest test_simulate_time_and_space_motion.py
-```
-
-----
