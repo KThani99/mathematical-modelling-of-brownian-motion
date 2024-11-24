@@ -31,18 +31,14 @@ def getBrownianMotion(noOfTimeSteps, stepSize, sigma):
     if sigma <= 0:
         raise ValueError("sigma must be positive")
 
-    startPosition = [0, 0]
-
     xAxisPositions = np.zeros(noOfTimeSteps)
     yAxisPositions = np.zeros(noOfTimeSteps)
-    xAxisPositions[0], yAxisPositions[0] = startPosition
-
-    for i in range(1, noOfTimeSteps):
-        dx = np.random.normal(0, sigma * np.sqrt(stepSize))
-        dy = np.random.normal(0, sigma * np.sqrt(stepSize))
-
-        xAxisPositions[i] = xAxisPositions[i - 1] + dx
-        yAxisPositions[i] = yAxisPositions[i - 1] + dy
+    
+    dx = np.random.normal(0, sigma * np.sqrt(stepSize), noOfTimeSteps-1)
+    dy = np.random.normal(0, sigma * np.sqrt(stepSize), noOfTimeSteps-1)
+    
+    xAxisPositions[1:] = np.cumsum(dx)
+    yAxisPositions[1:] = np.cumsum(dy)
     
     return xAxisPositions, yAxisPositions
 
