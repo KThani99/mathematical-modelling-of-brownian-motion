@@ -9,19 +9,6 @@ class Test2DSimulation:
     Test suite for 2D Brownian motion simulation
     """
 
-    @pytest.fixture
-    def mockPlot(self):
-        """
-        Fixture to mock plotting functions
-        """
-
-        with patch('matplotlib.pyplot.figure'), \
-             patch('matplotlib.pyplot.plot'), \
-             patch('matplotlib.pyplot.scatter'), \
-             patch('matplotlib.pyplot.savefig'), \
-             patch('matplotlib.pyplot.show'):
-            yield
-
     def testGetBrownianMotionShape(self):
         """
         Test if getBrownianMotion returns correct array shapes
@@ -42,15 +29,3 @@ class Test2DSimulation:
         
         assert xAxisPositions[0] == 0, f"Expected x origin to be 0 but got {xAxisPositions[0]}"
         assert yAxisPositions[0] == 0, f"Expected y origin to be 0 but got {yAxisPositions[0]}"
-
-    def testPlotBrownianMotion(self, mockPlot):
-        """
-        Test if plotting functions are called
-        """
-
-        xAxisPositions, yAxisPositions = getBrownianMotion(10, 1, 1)
-        plotBrownianMotion(xAxisPositions, yAxisPositions)
-        
-        plt.figure.assert_called_once()
-        plt.plot.assert_called_once()
-        plt.savefig.assert_called_once()

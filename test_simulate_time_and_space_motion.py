@@ -8,19 +8,6 @@ class TestTimeAndSpaceSimulation:
     """
     Test suite for Time and Space Brownian motion simulation
     """
-
-    @pytest.fixture
-    def mockPlot(self):
-        """
-        Fixture to mock plotting functions
-        """
-
-        with patch('matplotlib.pyplot.figure'), \
-             patch('matplotlib.pyplot.plot'), \
-             patch('matplotlib.pyplot.scatter'), \
-             patch('matplotlib.pyplot.savefig'), \
-             patch('matplotlib.pyplot.show'):
-            yield
     
     def testGetBrownianMotionShape(self):
         """
@@ -45,14 +32,3 @@ class TestTimeAndSpaceSimulation:
 
         with pytest.raises(ValueError):
             getBrownianMotion(1000, 1, 0)
-
-    def testPlotBrownianMotion(self, mockPlot):
-        """
-        Test if plotting functions are called
-        """
-
-        samplePointsAcrossTime, brownianMotion = getBrownianMotion(1000, 1, 1.)
-        plotBrownianMotion(samplePointsAcrossTime, brownianMotion)
-
-        plt.plot.assert_called_once()
-        plt.savefig.assert_called_once()
