@@ -1,3 +1,4 @@
+import configparser
 import numpy as np
 import matplotlib.pyplot as plt
 from utils.main import getUniqueFileName
@@ -86,12 +87,14 @@ def main():
         - The standard deviation (`sigma`).
     """
 
-    # Parameters
-    noOfTimeSteps = 1000
-    stepSize = 1
-    sigma = 1
+    configu = configparser.ConfigParser()
+    configu.read("configuration.txt")
 
-    xAxisPositions, yAxisPositions = getBrownianMotion(noOfTimeSteps, stepSize, sigma)
+    no_of_time_steps = configu.getint("2d_simulation_parameters", "noOfTimeSteps")
+    step_size = configu.getint("2d_simulation_parameters", "stepSize")
+    sigma = configu.getint("2d_simulation_parameters", "sigma")
+
+    xAxisPositions, yAxisPositions = getBrownianMotion(no_of_time_steps, step_size, sigma)
     plotBrownianMotion(xAxisPositions, yAxisPositions)
 
 main()

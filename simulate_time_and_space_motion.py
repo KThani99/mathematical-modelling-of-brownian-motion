@@ -1,3 +1,4 @@
+import configparser
 import numpy as np
 import matplotlib.pyplot as plt
 from utils.main import getUniqueFileName
@@ -78,12 +79,14 @@ def main():
         - The time step (`timeStep`) representing the time interval for the simulation.
     """
 
-    # Parameters
-    noOfSamplePoints = 1000
-    noOfBrownianMotions = 100
-    timeStep = 1.
+    configu = configparser.ConfigParser()
+    configu.read("configuration.txt")
 
-    samplePointsAcrossTime, brownianMotion = getBrownianMotion(noOfSamplePoints, noOfBrownianMotions, timeStep)
+    no_of_sample_points = configu.getint("time_space_parameters", "noOfSamplePoints")
+    no_of_brownian_motions = configu.getint("time_space_parameters", "noOfBrownianMotions")
+    time_step = configu.getfloat("time_space_parameters", "timeStep")
+
+    samplePointsAcrossTime, brownianMotion = getBrownianMotion(no_of_sample_points, no_of_brownian_motions, time_step)
     plotBrownianMotion(samplePointsAcrossTime, brownianMotion)
 
 main()
