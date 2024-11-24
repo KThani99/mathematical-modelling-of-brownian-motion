@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import patch
-from utils.main import getCurrentTimeInEpochSeconds, getUniqueFileName
+from utils.main import getUniqueId, getUniqueFileName
 
 class TestFileUtils:
     """
@@ -12,16 +12,8 @@ class TestFileUtils:
         """
         Fixture to provide a consistent timestamp for testing
         """
-        with patch('utils.main.getCurrentTimeInEpochSeconds', return_value=1234567890):
+        with patch('utils.main.getUniqueId', return_value="dbe43931-e894-4675-91b3-7c7073b60b64"):
             yield
-
-    def testGetCurrentTimeInEpochSecondsReturnsInteger(self):
-        """
-        Test that getCurrentTimeInEpochSeconds returns an integer
-        """
-
-        result = getCurrentTimeInEpochSeconds()
-        assert isinstance(result, int)
 
     def testGetUniqueFileName(self, mockTime):
         """
@@ -29,7 +21,7 @@ class TestFileUtils:
         """
 
         result = getUniqueFileName("test_image")
-        expected = "test_image-1234567890.png"
+        expected = "test_image-dbe43931-e894-4675-91b3-7c7073b60b64.png"
         assert result == expected, f"Expected {expected}, but got {result}"
     
     def testGetUniqueFileNameWithEmptyString(self, mockTime):
@@ -38,5 +30,5 @@ class TestFileUtils:
         """
 
         result = getUniqueFileName("")
-        expected = "-1234567890.png"
+        expected = "-dbe43931-e894-4675-91b3-7c7073b60b64.png"
         assert result == expected, f"Expected {expected}, but got {result}"
