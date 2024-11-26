@@ -1,7 +1,7 @@
 [time_space_parameters]
 noOfSamplePoints = 1000
 noOfBrownianMotions = 100
-timeStep = 1.0
+timeStep = 1
 
 [2d_simulation_parameters]
 noOfTimeSteps = 1000

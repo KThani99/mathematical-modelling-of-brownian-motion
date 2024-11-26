@@ -12,7 +12,7 @@ class TestTimeAndSpaceSimulation:
         Test if getBrownianMotion returns correct array shapes
         """
 
-        samplePointsAcrossTime, motion = getBrownianMotion(1000, 1, 1.0)
+        samplePointsAcrossTime, motion = getBrownianMotion(1000, 1, 1)
         
         assert len(samplePointsAcrossTime) == 1000, f"Expected samplePointsAcrossTime length to be 1000, but got {len(samplePointsAcrossTime)}"
         assert motion.shape == (1000, 1), f"Expected brownianMotion shape to be (1000, 1), but got {motion.shape}"
@@ -24,7 +24,7 @@ class TestTimeAndSpaceSimulation:
 
         noOfSamplePoints = 500
         noOfBrownianMotions = 5
-        timeStep = 1.0
+        timeStep = 1
 
         _, brownianMotion = getBrownianMotion(noOfSamplePoints, noOfBrownianMotions, timeStep)
 
@@ -51,7 +51,7 @@ class TestTimeAndSpaceSimulation:
 
         noOfSamplePoints = 1000
         noOfBrownianMotions = 3
-        timeStep = 1.0
+        timeStep = 1
 
         _, brownianMotion = getBrownianMotion(noOfSamplePoints, noOfBrownianMotions, timeStep)
 
@@ -71,7 +71,7 @@ class TestTimeAndSpaceSimulation:
 
         noOfSamplePoints = 2
         noOfBrownianMotions = 1
-        timeStep = 0.1
+        timeStep = 1
 
         samplePointsAcrossTime, brownianMotion = getBrownianMotion(noOfSamplePoints, noOfBrownianMotions, timeStep)
 
@@ -87,7 +87,7 @@ class TestTimeAndSpaceSimulation:
 
         noOfSamplePoints = 10**6
         noOfBrownianMotions = 1
-        timeStep = 0.1
+        timeStep = 1
 
         samplePointsAcrossTime, _ = getBrownianMotion(noOfSamplePoints, noOfBrownianMotions, timeStep)
         assert len(samplePointsAcrossTime) == noOfSamplePoints, f"Expected samplePointsAcrossTime to have length {noOfSamplePoints}."
@@ -99,7 +99,7 @@ class TestTimeAndSpaceSimulation:
 
         noOfSamplePoints = 1000
         noOfBrownianMotions = 2
-        timeStep = 1.0
+        timeStep = 1
 
         np.random.seed(42)
         sp1, bm1 = getBrownianMotion(noOfSamplePoints, noOfBrownianMotions, timeStep)

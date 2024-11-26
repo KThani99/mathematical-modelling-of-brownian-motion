@@ -14,7 +14,7 @@ def getBrownianMotion(noOfSamplePoints, noOfBrownianMotions, timeStep):
         noOfBrownianMotions (int): 
             The number of independent Brownian motions (paths) to simulate. 
         
-        timeStep (float): 
+        timeStep (int): 
             The time difference between each consecutive sample point. 
     
     Returns:
@@ -84,7 +84,7 @@ def main():
 
     no_of_sample_points = configu.getint("time_space_parameters", "noOfSamplePoints")
     no_of_brownian_motions = configu.getint("time_space_parameters", "noOfBrownianMotions")
-    time_step = configu.getfloat("time_space_parameters", "timeStep")
+    time_step = configu.getint("time_space_parameters", "timeStep")
 
     samplePointsAcrossTime, brownianMotion = getBrownianMotion(no_of_sample_points, no_of_brownian_motions, time_step)
     plotBrownianMotion(samplePointsAcrossTime, brownianMotion)
