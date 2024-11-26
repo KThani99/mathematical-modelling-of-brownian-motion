@@ -1,8 +1,6 @@
 import pytest
 import numpy as np
-from unittest.mock import patch, Mock
-import matplotlib.pyplot as plt
-from simulate_2d_motion import getBrownianMotion, plotBrownianMotion
+from simulate_2d_motion import getBrownianMotion
 
 class Test2DSimulation:
     """

@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import patch
-from utils.main import getUniqueId, getUniqueFileName
+from utils.main import getUniqueFileName
 
 class TestFileUtils:
     """
