@@ -32,7 +32,7 @@ class Test2DSimulation:
     
     def testIfInvalidInputsAreRejected(self):
         """
-        Test to see if invalid values to getBrownianMotion is being rejected
+        Test to see if invalid values to getBrownianMotion are being rejected
         """
 
         with pytest.raises(ValueError, match="noOfTimeSteps must be positive"):
@@ -46,7 +46,7 @@ class Test2DSimulation:
     
     def testRandomBehavior(self):
         """
-        Ensure that the random increments behave as expected.
+        Test to check that the random increments behave as expected.
         """
 
         noOfTimeSteps = 10
@@ -75,7 +75,7 @@ class Test2DSimulation:
         assert len(xAxisPositions) == noOfTimeSteps, "Length mismatch for large noOfTimeSteps in xAxisPositions."
         assert len(yAxisPositions) == noOfTimeSteps, "Length mismatch for large noOfTimeSteps in yAxisPositions."
     
-    def testCaseMinimalInput(self):
+    def testMinimalInput(self):
         """
         Test the function with the smallest valid number of time steps.
         """
